@@ -50,6 +50,13 @@ class PriceFieldsProvider
                 }
             }
         }
+        
+        foreach ($result as $productId => $fields) {
+            foreach ($fields as $key => $value) {
+                $result[$productId][$key] = (float)$value;
+            }
+        }
+        
         return $result;
     }
 }
